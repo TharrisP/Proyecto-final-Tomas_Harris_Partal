@@ -5,6 +5,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+def inicio(req):
+    return render(req, 'appProyecto/padre.html')
 
 def busqueda_socio(req):
     return render(req, "app_busqueda/busqueda_socio.html")
