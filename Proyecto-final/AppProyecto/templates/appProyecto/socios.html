@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% extends "appProyecto/padre.html" %}
+    {% load static %}
+    {% block contenidoQueCambia %}
+
+    {% block titulo %}Lista de Socios{% endblock %}
+
+<h2>Socios</h2>
+<table class="table table-striped" style="background-color: rgb(224, 224, 224);">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>documento</th>
+            <th>Email</th>
+            <th>Actividad</th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for socio in socios %}
+        <tr>
+            <td>{{ socio.nombre }}</td>
+            <td>{{ socio.apellido }}</td>
+            <td>{{ socio.documento }}</td>
+            <td>{{ socio.email }}</td>
+            <td>{{ socio.actividad }}</td>
+
+
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+    {% endblock %}
+
+</body>
+</html>

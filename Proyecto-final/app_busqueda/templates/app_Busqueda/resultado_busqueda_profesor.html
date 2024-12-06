@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "app_busqueda/padre.html" %}
+    {% load static %}
+    {% block contenidoQueCambia %}
+
+    <p>Estamos buscando el profesor cuya profesion es: {{ profesion }}</p>
+
+
+    {% if profesores %}
+<ul>
+{% for profesor in profesores %}
+    <li>{{ profesor.nombre }}</li>
+    <li>{{ profesor.apellido }}</li>
+    <li>{{ profesor.email }}</li>
+    <li>{{ profesor.profesion }}</li>
+
+{% endfor %}
+
+</ul>
+{% endif %}
+{% endblock %}
+</body>
+</html>

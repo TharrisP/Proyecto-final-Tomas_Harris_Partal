@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% extends "app_busqueda/padre.html" %}
+    {% load static %}
+    {% block contenidoQueCambia %}
+
+    <p>Estamos buscando el socio cuyo documento es: {{ documento }}</p>
+
+{% if socios %}
+<ul>
+{% for socio in socios %}
+    <li>{{ socio.nombre }}</li>
+    <li>{{ socio.apellido }}</li>
+    <li>{{ socio.documento }}</li>
+    <li>{{ socio.email }}</li>
+    <li>{{ socio.actividad }}</li>
+
+{% endfor %}
+{% endif %}
+
+    {% endblock %}
+
+</body>
+</html>
