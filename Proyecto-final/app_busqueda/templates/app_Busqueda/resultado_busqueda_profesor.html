@@ -12,6 +12,11 @@
 
     <p>Estamos buscando el profesor cuya profesion es: {{ profesion }}</p>
 
+    <i><p style="text-align: right;">Si no sale resultado es porque NO existe el profesor, caso contrario ignore este mensaje</i></p>
+    <h6 style="text-align: right;">Presione en Regresar para volver al buscador de profesores</h6>
+    <p style="text-align: center;">
+        <a style="color: black;" href="{% url 'busqueda_profesor' %}">Regresar</a>
+    </p>
 
     {% if profesores %}
 <ul>

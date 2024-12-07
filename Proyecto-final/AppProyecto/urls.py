@@ -17,7 +17,7 @@ urlpatterns = [
 
 
 ]
-#CONSULTAR TEMA CLASES BASADAS EN VISTAS
+
 
 url_clases_vistas=[
     path('actividades/lista/',clases_views.ActividadListView.as_view(),name='List'),

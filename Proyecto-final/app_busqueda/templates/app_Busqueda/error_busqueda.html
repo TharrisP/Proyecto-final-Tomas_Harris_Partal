@@ -1,0 +1,13 @@
+{% extends "app_busqueda/padre.html" %}
+    {% load static %}
+    {% block contenidoQueCambia %}
+
+    <div class="masthead-heading text-uppercase" >Datos ingresados incorrectos</div>
+
+<p>
+    <a style="color: black;" href="{% url 'busqueda_actividad' %}">Regresar</a>
+</p>
+
+    {% endblock %}
+</body>
+</html>

@@ -13,6 +13,12 @@
 
     <p>Estamos buscando el socio cuyo documento es: {{ documento }}</p>
 
+    <i><p style="text-align: right;">Si no sale resultado es porque NO existe el socio, caso contrario ignore este mensaje</i></p>
+    <h6 style="text-align: right;">Presione en Regresar para volver al buscador de socios</h6>
+    <p style="text-align: center;">
+        <a style="color: black;" href="{% url 'busqueda_socio' %}">Regresar</a>
+    </p>
+
 {% if socios %}
 <ul>
 {% for socio in socios %}

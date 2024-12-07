@@ -2,23 +2,27 @@ from django.shortcuts import render, redirect # type: ignore
 from .models import Actividades, Socios, Profesores
 from AppProyecto.forms import ActividadFormulario, SocioFormulario, ProfesorFormulario
 from django.http import HttpResponse # type: ignore
-import time
+from django.contrib.auth.decorators import login_required # type: ignore
 
 # Create your views here.
 
+@login_required
 def inicio(req):
     return render(req, 'appProyecto/padre.html')
 
+@login_required
 def socios(req):
     return render(req, 'appProyecto/socios.html')
 
+@login_required
 def profesores(req):
     return render(req, 'appProyecto/profesores.html')
 
+@login_required
 def actividades(req):
     return render(req, 'appProyecto/actividades.html')
 
-
+@login_required
 def actividad_form(req):
     if req.method == "POST":
 
@@ -38,6 +42,7 @@ def actividad_form(req):
 
     return render(req, "AppProyecto/actividades_formulario.html", {"miFormulario": miFormulario})
 
+@login_required
 def socio_form(req):
     if req.method == "POST":
 
@@ -58,6 +63,7 @@ def socio_form(req):
 
     return render(req, "AppProyecto/socios_formulario.html", {"miFormulario": miFormulario})
 
+@login_required
 def profesor_form(req):
     if req.method == "POST":
 
@@ -78,14 +84,17 @@ def profesor_form(req):
 
     return render(req, "AppProyecto/profesores_formulario.html", {"miFormulario": miFormulario})
 
+@login_required
 def lista_actividades(req):
     actividades = Actividades.objects.all()
     return render(req, 'appProyecto/actividades.html', {'actividades': actividades})
 
+@login_required
 def lista_profesores(req):
     profesores = Profesores.objects.all()
     return render(req, 'appProyecto/profesores.html', {'profesores': profesores})
 
+@login_required
 def lista_socios(req):
     socios = Socios.objects.all()
     return render(req, 'appProyecto/socios.html', {'socios': socios})

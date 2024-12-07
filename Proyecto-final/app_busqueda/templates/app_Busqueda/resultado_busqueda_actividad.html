@@ -11,8 +11,12 @@
     {% block contenidoQueCambia %}
 
     <p>Estamos buscando la actividad: {{ nombre }}</p>
-
-
+    
+    <i><p style="text-align: right;">Si no sale resultado es porque NO existe la actividad, caso contrario ignore este mensaje</i></p>
+    <h6 style="text-align: right;">Presione en Regresar para volver al buscador de actividades</h6>
+    <p style="text-align: center;">
+        <a style="color: black;" href="{% url 'busqueda_actividad' %}">Regresar</a>
+    </p>
     {% if nombre %}
 <ul>
 {% for nombre in actividades %}

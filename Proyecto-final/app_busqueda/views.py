@@ -21,8 +21,8 @@ def buscar(req):
 
         return render(req, "app_busqueda/resultado_busqueda_socio.html", {"socios": socios, "documento": documento})        
     else:
-        respuesta=HttpResponse("No ingresaste datos")
-        return (respuesta) 
+        return render(req,"app_busqueda/error_busqueda.html")
+
 
 def busqueda_profesor(req):
     return render(req, "app_busqueda/busqueda_profesor.html")
@@ -37,8 +37,7 @@ def buscar1(req):
 
         return render(req, "app_busqueda/resultado_busqueda_profesor.html", {"profesores": profesores, "profesion": profesion})    
     else:
-        respuesta=HttpResponse("No ingresaste datos")
-        return (respuesta)
+        return render(req,"app_busqueda/error_busqueda.html")
     
 def buscadores(req):
     return render(req, "app_busqueda/padre.html")
@@ -56,7 +55,6 @@ def buscar2(req):
         actividades = Actividades.objects.filter(nombre__icontains=nombre)
 
         return render(req, "app_busqueda/resultado_busqueda_actividad.html", {"actividades": actividades, "nombre": nombre})
-    
+        
     else:
-        respuesta=HttpResponse("No ingresaste datos")
-        return (respuesta)
+        return render(req,"app_busqueda/error_busqueda.html")
