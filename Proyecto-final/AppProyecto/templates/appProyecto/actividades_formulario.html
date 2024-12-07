@@ -11,15 +11,19 @@
     {% load static %}
     {% block contenidoQueCambia %}
 
+<br>
+    <br>
+        <br>
     <form action="" method="POST">
         {% csrf_token %}
-
-            {{ miFormulario.as_table }}
-        
+        <h4><i>Ingrese datos de actividad nueva:</i></h4><br><br>
+        <strong>{{ miFormulario.as_table }}</strong>
         <input type="submit" value="Enviar"> 
 
     </form>
 
+    </br>
+    
     {% endblock %}
 
 </body>

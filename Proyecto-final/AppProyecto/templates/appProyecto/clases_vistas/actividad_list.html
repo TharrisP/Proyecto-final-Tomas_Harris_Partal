@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% extends 'appProyecto/padre.html' %}
+    {% load static%}
+    {% block title %} Inicio {% endblock title %}
+
+    {% block main %}
+    <h1>Actividades del club</h1>
+    {% for actividad in object_list %}
+    <li>
+        <p>NOMBRE : {{actividad.nombre}}</p>
+        <p>
+            <a href="{% url 'Detail' actividad.id %}">Ver</a>
+            <a href="{% url 'Edit' actividad.id %}">Editar</a>
+            <a href="{% url 'Delete' actividad.id %}">Borrar</a>
+
+        </p>
+    </li>
+    {% endfor %}
+    {% endblock main %}
+
+</body>
+</html>

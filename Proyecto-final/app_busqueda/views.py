@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect # type: ignore
 from AppProyecto.models import Actividades, Socios, Profesores
 from AppProyecto.forms import ActividadFormulario, SocioFormulario, ProfesorFormulario
-from django.http import HttpResponse
+from django.http import HttpResponse # type: ignore
 
 # Create your views here.
 

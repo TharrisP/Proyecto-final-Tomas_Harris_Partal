@@ -1,5 +1,6 @@
-from django.urls import path
+from django.urls import path # type: ignore
 from AppProyecto import views
+from AppProyecto import clases_views
 
 
 urlpatterns = [
@@ -16,3 +17,14 @@ urlpatterns = [
 
 
 ]
+#CONSULTAR TEMA CLASES BASADAS EN VISTAS
+
+url_clases_vistas=[
+    path('actividad/lista/',clases_views.ActividadListView.as_view(),name='List'),
+    path('actividad/detalle/<int:pk>/', clases_views.ActividadDetalle.as_view(), name='Detail'),
+    path('actividad/nuevo/', clases_views.ActividadCreateView.as_view(), name='New'),
+    path('actividad/editar/<int:pk>', clases_views.ActividadUpdateView.as_view(), name='Edit'),
+    path('actividad/eliminar/<int:pk>', clases_views.ActividadDeleteView.as_view(), name='Delete')
+]
+
+urlpatterns+=url_clases_vistas

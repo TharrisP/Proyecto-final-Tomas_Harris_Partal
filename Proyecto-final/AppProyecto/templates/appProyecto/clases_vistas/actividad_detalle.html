@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% extends 'appProyecto/padre.html' %}
+
+{% load static %}
+
+{% block title %} Inicio {% endblock title %}
+
+{% block main %}
+
+<p>Curso: <i>{{ actividad.nombre }}</i></p>
+<p>Camada: <i>{{ actividad.valor }}</i></p>
+
+<p>
+    <a href="{% url 'List' %}">Regresar</a>
+</p>
+
+{% endblock main %}
+
+</body>
+</html>
