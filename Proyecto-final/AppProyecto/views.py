@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required # type: ignore
 
 # Create your views here.
 
-@login_required
+
 def inicio(req):
     return render(req, 'appProyecto/padre.html')
 
