@@ -23,6 +23,8 @@ urlpatterns = [
     path('bienvenida/', bienvenida),
     path('',include('AppProyecto.urls')),
     path('',include('app_busqueda.urls')),
+    path('',include('app_user.urls')),
+
 
 
 
