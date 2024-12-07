@@ -25,9 +25,12 @@
         {% for actividad in actividades %}
         <tr>
             <td>{{ actividad.nombre }}</td>
-            <td>{{ actividad.valor }}</td>
 
+            <td> <a href="{% url 'Detail' actividad.id %}">Ver</a></td>
+            <td><a href="{% url 'Edit' actividad.id %}">Editar</a></td>
+            <td><a href="{% url 'Delete' actividad.id %}">Borrar</a></td>
 
+            
         </tr>
         {% endfor %}
     </tbody>

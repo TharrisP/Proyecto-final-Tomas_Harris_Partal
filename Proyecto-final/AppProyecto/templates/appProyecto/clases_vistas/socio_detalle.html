@@ -14,11 +14,15 @@
 {% block title %} Inicio {% endblock title %}
 
 {% block main %}
-<p>Actividad: <strong>{{ actividades.nombre }}</strong></p>
-<p>Valor: <strong>{{ actividades.valor }}</strong></p>
+<p>Nombre: <strong>{{ socios.nombre }}</strong></p>
+<p>Apellido: <strong>{{ socios.apellido }}</strong></p>
+<p>Documento: <strong>{{ socios.documento }}</strong></p>
+<p>Email: <strong>{{ socios.email }}</strong></p>
+<p>Actividad: <strong>{{ socios.actividad }}</strong></p>
+
 
 <p>
-    <a style="color: black;" href="{% url 'lista-actividades' %}">Regresar</a>
+    <a style="color: black;" href="{% url 'lista-socios' %}">Regresar</a>
 </p>
 
 {% endblock main %}

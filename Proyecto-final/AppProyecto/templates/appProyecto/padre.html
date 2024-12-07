@@ -25,7 +25,7 @@
                         <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'lista-actividades' %}"><u ><strong>Actividades</strong></u></a></li>
                         <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'socio_form' %}"><u ><strong>Nuevo Socio </strong></u></a></li>
                         <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'profesor_form' %}"><u ><strong>Nuevo Profesor </strong></u></a></li>
-                        <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'actividad_form' %}"><u ><strong>Nueva Actividad </strong></u></a></li>
+                        <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'New' %}"><u ><strong>Nueva Actividad </strong></u></a></li>
                         <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'buscadores' %}"><u ><strong>Busquedas </strong></u></a></li>
                         <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'Login' %}"><u ><strong>Iniciar Sesion </strong></u></a></li>
                         
@@ -47,5 +47,7 @@
             
             <body background="https://golsmedia.com/wp-content/uploads/2021/05/todo-necesitas-saber-crear-club-deportivo-e1622449688440.jpg" >
             
-            
+            {% block main %}
+
+            {% endblock %}
         </header>

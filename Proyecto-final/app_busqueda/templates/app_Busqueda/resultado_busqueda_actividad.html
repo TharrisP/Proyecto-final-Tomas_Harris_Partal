@@ -10,14 +10,14 @@
     {% load static %}
     {% block contenidoQueCambia %}
 
-    <p>Estamos buscando la actividad: {{ actividad }}</p>
+    <p>Estamos buscando la actividad: {{ nombre }}</p>
 
 
-    {% if actividad %}
+    {% if nombre %}
 <ul>
-{% for profesor in profesores %}
-    <li>{{ actividad.nombre }}</li>
-    <li>{{ actividad.valor }}</li>
+{% for nombre in actividades %}
+    <li>{{ nombre.nombre }}</li>
+    <li>{{ nombre.valor }}</li>
 
 {% endfor %}
 

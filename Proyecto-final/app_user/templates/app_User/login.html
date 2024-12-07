@@ -1,29 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    {% extends 'app_user/padre.html' %}
+{% extends 'app_user/padre.html' %}
 
-    {% load static %}
+{% block title %}Inicio{% endblock %}
 
-    {% block title %} Inicio {% endblock title %}
-    
-    {% block main %}
-    
-    
-        <form action="" method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            
-            <button type="submit">Iniciar sesion</button>
-        </form>
-    
-    {% endblock main %}
-
-</body>
-</html>
+{% block main %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-lg p-4">
+            <h2 class="text-center mb-4">Ingrese datos de inicio de sesion</h2>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" type="submit">Iniciar sesión</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

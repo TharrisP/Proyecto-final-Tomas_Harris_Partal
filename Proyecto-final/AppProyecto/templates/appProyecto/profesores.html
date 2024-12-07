@@ -19,8 +19,6 @@
         <tr>
             <th>Nombre</th>
             <th>Apellido</th>
-            <th>Email</th>
-            <th>Profesion</th>
 
         </tr>
     </thead>
@@ -29,9 +27,10 @@
         <tr>
             <td>{{ profesor.nombre }}</td>
             <td>{{ profesor.apellido }}</td>
-            <td>{{ profesor.email }}</td>
-            <td>{{ profesor.profesion }}</td>
 
+            <td> <a href="{% url 'Detail-profesor' profesor.id %}">Ver</a></td>
+            <td><a href="{% url 'Edit-profesor' profesor.id %}">Editar</a></td>
+            <td><a href="{% url 'Delete-profesor' profesor.id %}">Borrar</a></td>
 
 
         </tr>
