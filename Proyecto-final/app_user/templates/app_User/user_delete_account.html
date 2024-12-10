@@ -2,7 +2,7 @@
 
 {% block title %}Eliminar Cuenta{% endblock %}
 
-{% block content %}
+{% block main %}
 <div class="container mt-4">
     <h1 class="mb-4">¿Estás seguro de que deseas eliminar tu cuenta?</h1>
     <form method="post">
@@ -11,4 +11,4 @@
         <a href="{% url 'VerPerfil' %}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
-{% endblock %}
+{% endblock main%}

@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate, logout # type: ignore
 from .forms import UserRegisterForm, UserEditForm
 from .models import ImageProfile
 from django.contrib.auth.decorators import login_required # type: ignore
+from django.contrib import messages # type: ignore
 # Create your views here.
 
 def login_request(req):
@@ -50,31 +51,31 @@ def ver_perfil(request):
 
 @login_required
 def editar_perfil(request):
-    
-    user = request.user
+
+    usuario = request.user
 
     if request.method == 'POST':
-        form = UserEditForm(request.POST, request.FILES, instance=user)
+
+        form = UserEditForm(request.POST, request.FILES, instance=request.user)
 
         if form.is_valid():
+
             if form.cleaned_data.get('imagen'):
-                if ImageProfile.objects.filter(user=user).exists():
-                    
-                    user.imagen.imagen = form.cleaned_data.get('imagen')
-                    user.imagen.save()
-                else:
-                    img = ImageProfile(user=user, imagen=form.cleaned_data.get('imagen'))
-                    img.save()
+                usuario.imagen.imagen = form.cleaned_data.get('imagen')
+                usuario.imagen.imagen.save()
 
-                form.save()
-
-                return render(request, "AppProyecto/padre.html")
-        else:
+            form.save()
             
-            form=UserEditForm(instance=user)
+            return render(request, "AppProyecto/padre.html")
+    else:
         
-        return render(request,"app_User//user_edit.html", {"form":form, "user": user})
+        form = UserEditForm(initial={'imagen': usuario.imagen.imagen}, instance=request.user)
+
+    return render(request, "app_User/user_edit.html", {"form":form,"usuario":usuario})
+
     
+
+
 @login_required
 def delete_account(request):
 
@@ -88,25 +89,4 @@ def delete_account(request):
     
 
 
-# def editar_perfil(request):
 
-#     usuario = request.user
-
-#     if request.method == 'POST':
-
-#         form = UserEditForm(request.POST, request.FILES, instance=request.user)
-
-#         if form.is_valid():
-
-#             if form.cleaned_data.get('imagen'):
-#                 usuario.imagen.imagen = form.cleaned_data.get('imagen')
-#                 usuario.imagen.imagen.save()
-
-#             form.save()
-            
-#             return render(request, "AppProyecto/padre.html")
-#     else:
-        
-#         form = UserEditForm(initial={'imagen': usuario.imagen.imagen}, instance=request.user)
-
-#     return render(request, "app_User/user_edit.html", {"form":form,"usuario":usuario})
