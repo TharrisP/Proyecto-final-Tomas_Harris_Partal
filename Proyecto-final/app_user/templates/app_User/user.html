@@ -1,0 +1,18 @@
+{% extends 'app_user/padre.html' %}
+
+{% block title %}Mi perfil{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Mi Perfil</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Usuario: {{ user.username }}</h5>
+            <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+
+            <a href="{% url 'EditarPerfil' %}" class="btn btn-primary mt-3">Editar Perfil</a>
+            <a href="{% url 'EliminarCuenta' %}" class="btn btn-danger mt-3">Eliminar Cuenta</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

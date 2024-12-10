@@ -24,6 +24,7 @@
                             <li class="nav-item">
                                 <a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'inicio' %}">
                                     <u><strong>Pagina principal</strong></u>
+                                    
                                 </a>
                             </li>
                         </ul>
@@ -35,6 +36,8 @@
     
     <main class="container mt-5">
         {% block main %}
+        {{ mensaje }}
+
         {% endblock %}
     </main>
 

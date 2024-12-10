@@ -1,0 +1,19 @@
+{% extends 'app_user/padre.html' %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block main%}
+<br>
+    <br>
+    <br>
+    <br>
+<div style="text-align: center;">
+<div><a style="color: white;">    
+    <h5 style="background-color: rgba(0, 20, 121, 0.817);">Error en el ingreso de los datos</h5>
+    </a>
+
+<h5 style="background-color: rgba(0, 20, 121, 0.817);"><li class="nav-item"><a style="color:white" class="nav-link" href="{% url 'Login' %}"><u ><strong>Iniciar Sesion </strong></u></a></li></h5>
+<h5 style="background-color: rgba(0, 20, 121, 0.817);"><li class="nav-item"><a style="color:white" class="nav-link" href="{% url 'Registro' %}"><u ><strong>Registrarse </strong></u></a></li></h5>
+</div>                   
+</div>
+{% endblock %}

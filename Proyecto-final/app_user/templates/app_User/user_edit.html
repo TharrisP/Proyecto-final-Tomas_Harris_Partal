@@ -1,0 +1,20 @@
+{% extends 'app_user/padre.html' %}
+
+{% block title %} Login {% endblock title%}
+
+{% block main %}
+
+    <h1>Editar perfil de {{usuario}}</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <table>
+            {{ form.as_table}}
+        </table>
+        <input type="submit" value="Actualizar">
+
+
+    </form>
+
+{% endblock main %}
