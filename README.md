@@ -72,17 +72,17 @@ Este es un Proyecto Web Django con patrón MVT, en el cual se trabaja con distin
 
 Principales Funcionalidades
 
-- Página principal           http://127.0.0.1:8000/
-- Lista de Socios            http://127.0.0.1:8000/lista-socios/
-- Lista de Profesores	     http://127.0.0.1:8000/lista-profesores/
-- Lista de actividades	     http://127.0.0.1:8000/lista-actividades/
-- Detalle Socio              http://127.0.0.1:8000/socio/detalle/1/
-- Detalle Profesor           http://127.0.0.1:8000/profesor/detalle/1/
-- Detalle Actividad          http://127.0.0.1:8000/actividad/detalle/1/
-- Nuevo Socio                http://127.0.0.1:8000/socio-form/
-- Nuevo Profesor             http://127.0.0.1:8000/profesor-form/
-- Nueva Actividad            http://127.0.0.1:8000/actividad/nuevo/
-- Busquedas                  http://127.0.0.1:8000/buscadores/
-- Ver Perfil                 http://127.0.0.1:8000/app_user/view-profile/
-- Cerrar Sesión              http://127.0.0.1:8000/app_user/logout/
+- Página principal:           http://127.0.0.1:8000/
+- Lista de Socios:            http://127.0.0.1:8000/lista-socios/
+- Lista de Profesores:	      http://127.0.0.1:8000/lista-profesores/
+- Lista de actividades:	      http://127.0.0.1:8000/lista-actividades/
+- Detalle Socio:              http://127.0.0.1:8000/socio/detalle/1/
+- Detalle Profesor:           http://127.0.0.1:8000/profesor/detalle/1/
+- Detalle Actividad:          http://127.0.0.1:8000/actividad/detalle/1/
+- Nuevo Socio:                http://127.0.0.1:8000/socio-form/
+- Nuevo Profesor:             http://127.0.0.1:8000/profesor-form/
+- Nueva Actividad:            http://127.0.0.1:8000/actividad/nuevo/
+- Busquedas:                  http://127.0.0.1:8000/buscadores/
+- Ver Perfil:                 http://127.0.0.1:8000/app_user/view-profile/
+- Cerrar Sesión:              http://127.0.0.1:8000/app_user/logout/
 
