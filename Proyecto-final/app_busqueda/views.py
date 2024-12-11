@@ -2,15 +2,17 @@ from django.shortcuts import render, redirect # type: ignore
 from AppProyecto.models import Actividades, Socios, Profesores
 from AppProyecto.forms import ActividadFormulario, SocioFormulario, ProfesorFormulario
 from django.http import HttpResponse # type: ignore
-
+from django.contrib.auth.decorators import login_required # type: ignore
 # Create your views here.
 
 def inicio(req):
     return render(req, 'appProyecto/padre.html')
 
+@login_required
 def busqueda_socio(req):
     return render(req, "app_busqueda/busqueda_socio.html")
 
+@login_required
 def buscar(req):
     
     if req.GET["documento"]:
@@ -26,6 +28,7 @@ def buscar(req):
 
 def busqueda_profesor(req):
     return render(req, "app_busqueda/busqueda_profesor.html")
+
 
 def buscar1(req):
     

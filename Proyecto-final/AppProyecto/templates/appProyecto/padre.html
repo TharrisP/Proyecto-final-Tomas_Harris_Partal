@@ -27,15 +27,26 @@
                         <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'profesor_form' %}"><u ><strong>Nuevo Profesor </strong></u></a></li>
                         <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'New' %}"><u ><strong>Nueva Actividad </strong></u></a></li>
                         <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'buscadores' %}"><u ><strong>Busquedas </strong></u></a></li>
+                        
                         {% if request.user.is_authenticated %}
 
                         <div style="text-align: right;">
-                        <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'VerPerfil' %}"><u ><strong>Ver perfil </strong></u></a></li>
-                        <button class="btn btn-primary" type="submit" style="color: black;" href= "{% url 'EditarPerfil'%}"><u><strong>{{ request.user.username}}</strong></u></button>
+                            {% if request.user.profile.imagen %}
+                            <img src="{{request.user.profile.imagen.url}}" alt="" style="height: 50px;width: 50px;">
+                            {% endif %}
+
+                            <a style="color: black;"><u><strong>{{ request.user.username}}</strong></u></a>
+                            <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'VerPerfil' %}"><u ><strong>Ver perfil </strong></u></a></li>
+                        </li>
+                        </li>
+                            <div style="text-align: right;">
+                        
                         <form method="post" action="{% url 'Logout' %}">
                             {% csrf_token %}
                             <div style="text-align: right;">
                                 <button class="btn btn-primary" type="submit" style="color: black;"><u><strong>Cerrar sesión</strong></u></button>
+                            </div>
+                            </div>
                             </div>    
                             </form>
 

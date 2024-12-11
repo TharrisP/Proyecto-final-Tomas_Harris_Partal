@@ -3,17 +3,17 @@
 {% block title %} Login {% endblock title%}
 
 {% block main %}
+    <div style="background-color: rgb(23, 14, 85);">
+    <div style="color: white;">
+        <h2>Editar perfil</h2>
 
-    <h1>Editar perfil de {{usuario}}</h1>
-
-    <form action="" method="POST">
-        {% csrf_token %}
-
-        <table>
-            {{ form.as_table}}
-        </table>
-        <input type="submit" value="Actualizar">
-
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Guardar cambios</button>
+        </form>
+    </div>
+    </div>
 
     </form>
 

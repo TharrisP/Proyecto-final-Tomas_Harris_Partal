@@ -4,7 +4,10 @@ from django.views.generic.detail import DetailView  # type: ignore # Para mostra
 from django.views.generic.edit import CreateView, UpdateView, DeleteView  # type: ignore # Para crear, actualizar y eliminar objetos
 from django.urls import reverse_lazy  # type: ignore # Para generar URLs de forma segura
 from .models import Actividades, Socios, Profesores
-from django.contrib.auth.mixins import LoginRequiredMixin # type: ignore
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin # type: ignore
+from django.contrib.auth.decorators import permission_required
+
+
 
 # -------- ACTIVIDADES --------
 
@@ -28,6 +31,13 @@ class ActividadCreateView(LoginRequiredMixin,CreateView):
     success_url = reverse_lazy("lista-actividades")
     fields = ["nombre", "valor"]
 
+    def dispatch(self, request, *args, **kwargs):
+        # Lógica personalizada para permitir o denegar el acceso
+        if request.user.has_perm('appProyecto.add_actividad'):  # Solo si tiene permiso
+            return super().dispatch(request, *args, **kwargs)
+        else:
+            return render(request, "AppProyecto/clases_vistas/mensaje_restriccion.html") 
+        
 class ActividadUpdateView(LoginRequiredMixin,UpdateView):
     """
     Vista para editar actividades existentes a través de un formulario
@@ -37,6 +47,13 @@ class ActividadUpdateView(LoginRequiredMixin,UpdateView):
     success_url = reverse_lazy("lista-actividades")
     fields = ["nombre", "valor"]
 
+    def dispatch(self, request, *args, **kwargs):
+        # Lógica personalizada para permitir o denegar el acceso
+        if request.user.has_perm('appProyecto.edit_actividad'):  # Solo si tiene permiso
+            return super().dispatch(request, *args, **kwargs)
+        else:
+            return render(request, "AppProyecto/clases_vistas/mensaje_restriccion.html") 
+
 class ActividadDeleteView(LoginRequiredMixin,DeleteView):
     """
     Vista para eliminar actividades.
@@ -44,6 +61,13 @@ class ActividadDeleteView(LoginRequiredMixin,DeleteView):
     model = Actividades
     success_url = reverse_lazy("lista-actividades")
     template_name = "appProyecto/clases_vistas/actividad_confirm_delete.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        # Lógica personalizada para permitir o denegar el acceso
+        if request.user.has_perm('appProyecto.delete_actividad'):  # Solo si tiene permiso
+            return super().dispatch(request, *args, **kwargs)
+        else:
+            return render(request, "AppProyecto/clases_vistas/mensaje_restriccion.html") 
 
 
 # -------- SOCIOS --------
@@ -76,6 +100,13 @@ class SocioUpdateView(LoginRequiredMixin,UpdateView):
     success_url = reverse_lazy("lista-socios")
     fields = ["nombre", "apellido", "documento", "email", "actividad"]
 
+    def dispatch(self, request, *args, **kwargs):
+        # Lógica personalizada para permitir o denegar el acceso
+        if request.user.has_perm('appProyecto.edit_actividad'):  # Solo si tiene permiso
+            return super().dispatch(request, *args, **kwargs)
+        else:
+            return render(request, "AppProyecto/clases_vistas/mensaje_restriccion.html") 
+
 class SocioDeleteView(LoginRequiredMixin,DeleteView):
     """
     Vista para eliminar socios.
@@ -83,6 +114,13 @@ class SocioDeleteView(LoginRequiredMixin,DeleteView):
     model = Socios
     success_url = reverse_lazy("lista-socios")
     template_name = "appProyecto/clases_vistas/socio_confirm_delete.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        # Lógica personalizada para permitir o denegar el acceso
+        if request.user.has_perm('appProyecto.delete_actividad'):  # Solo si tiene permiso
+            return super().dispatch(request, *args, **kwargs)
+        else:
+            return render(request, "AppProyecto/clases_vistas/mensaje_restriccion.html") 
 
 
 # -------- PROFESORES --------
@@ -116,6 +154,13 @@ class ProfesorUpdateView(LoginRequiredMixin,UpdateView):
     success_url = reverse_lazy("lista-profesores")
     fields = ["nombre", "apellido", "email", "profesion"]
 
+    def dispatch(self, request, *args, **kwargs):
+        # Lógica personalizada para permitir o denegar el acceso
+        if request.user.has_perm('appProyecto.edit_actividad'):  # Solo si tiene permiso
+            return super().dispatch(request, *args, **kwargs)
+        else:
+            return render(request, "AppProyecto/clases_vistas/mensaje_restriccion.html") 
+
 class ProfesorDeleteView(LoginRequiredMixin,DeleteView):
     """
     Vista para eliminar profesores.
@@ -123,3 +168,10 @@ class ProfesorDeleteView(LoginRequiredMixin,DeleteView):
     model = Profesores
     success_url = reverse_lazy("lista-profesores")
     template_name = "appProyecto/clases_vistas/profesor_confirm_delete.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        # Lógica personalizada para permitir o denegar el acceso
+        if request.user.has_perm('appProyecto.delete_actividad'):  # Solo si tiene permiso
+            return super().dispatch(request, *args, **kwargs)
+        else:
+            return render(request, "AppProyecto/clases_vistas/mensaje_restriccion.html") 
