@@ -19,7 +19,7 @@ Este es un Proyecto Web Django con patrón MVT, en el cual se trabaja con distin
 ## Descripción de secciones en el Sitio Web
 
 1. **Inicio**
-   - Lleva a la pagina principal. Es la única vista a la que tiene acceso el usuario sin iniciar sesión.
+   - Lleva a la pagina principal. El usuario tiene acceso sin necesidad de iniciar sesión.
 
 2. **Socios**
    - Al oprimir, aparece la lista actual de socios registrados en el club deportivo. Esta vista está *restringida* no solo para cuando no haya iniciado sesion el usuario, sino que además todos los usuarios que se registren e inicien sesión solo tienen acceso a la lista como se muestra en la tabla y a la información detallada de cada socio; es decir, no pueden modificar ni eliminar dicha información.
@@ -46,7 +46,7 @@ Este es un Proyecto Web Django con patrón MVT, en el cual se trabaja con distin
                               -->Busqueda Profesor: Se busca un profesor por su profesión.
                               -->Busqueda Actividad: Se busca una actividad por su nombre.
    
-   Todas las busquedas devuelven la información completa del modelo que se consulta.
+   Todas las busquedas devuelven la información completa del modelo que se consulta. A esta página se la puede acceder sin necesidad de iniciar sesión, aunque solo se puede ingresar a la busqueda de profesores y actividades.
 
 9. **Iniciar sesion**
    -Solicita dos campos, nombre de usuario y contraseña. En caso de ingresar mal al menos uno de los campos, devuelve un mensaje de "Error en el ingreso de los datos"; y brinda la opción de intentar nuevamente iniciar sesión o registrarse.
