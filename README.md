@@ -58,8 +58,9 @@ Este es un Proyecto Web Django con patrón MVT, en el cual se trabaja con distin
 
 11. **Ver perfil**
    - Figura nombre de usuario, email y, en caso de tener, la foto de perfil (sino aparece un mensaje de "No has subido un avatar"). En esta página se pueden observar dos botones:
-                              *Editar Perfil*: Dirige a un formulario para modificar los datos de perfil.
-                              *Eliminar Cuenta*: Aparece una pregunta de confirmación de eliminación de la cuenta.
+
+                        *Editar Perfil*: Dirige a un formulario para modificar los datos de perfil.
+                        *Eliminar Cuenta*: Aparece una pregunta de confirmación de eliminación de la cuenta.
 
 12. **Cerrar sesión**
    - Se sale de la sesión actual, volviendo a la pagina principal y sin acceso a la mayoría de la informacion; solo se tiene acceso a la pagina principal y la busqueda de profesores, actividades.
