@@ -31,13 +31,13 @@ Este es un Proyecto Web Django con patrón MVT, en el cual se trabaja con distin
    - Si se clickea en esta página, se puede ver una tabla en la que figuran las actividades actualmente registradas en el sitio del club deportivo. Se permite acceder solamente a la información de la actividad que queramos visualizar, mostrando nombre y valor de la actividad.
 
 5. **Nuevo Socio**
-   - Al seleccionar este botón, se redirige a un formulario para registrar un nuevo socio. Tienen acceso todos los usuarios que se registren e inicien sesión; a no ser que lo restrinja el Administrador.
+   - Al seleccionar este botón, se redirige a un formulario para registrar un nuevo socio. Tienen acceso todos los usuarios que se registren e inicien sesión.
 
 6. **Nuevo Profesor**
-   - Al oprimir, se redirige a un formulario para registar un nuevo profesor. Tienen acceso todos los usuarios que se registren e inicien sesión; a no ser que lo restrinja el Administrador.
+   - Al oprimir, se redirige a un formulario para registar un nuevo profesor. Tienen acceso todos los usuarios que se registren e inicien sesión.
 
 7. **Nueva Actividad**
-   - Ingresando en la página, se muestra un formulario para registrar una nueva actividad. No tiene acceso ningún usuario que no sea de Staff o Administrador.
+   - Ingresando en la página, se muestra un formulario para registrar una nueva actividad. No tiene acceso ningún usuario que no sea Administrador.
 
 8. **Busquedas**
    - Esta sección redirecciona a una pagina secundaria que esta ligada con la app_busqueda. Aparecen los accesos a las páginas:
