@@ -14,6 +14,8 @@ urlpatterns = [
     path('lista-actividades/', views.lista_actividades, name='lista-actividades'),
     path('lista-profesores/', views.lista_profesores, name='lista-profesores'),
     path('lista-socios/', views.lista_socios, name='lista-socios'),
+    path('about/', views.about, name='About'),
+
 
 
 ]

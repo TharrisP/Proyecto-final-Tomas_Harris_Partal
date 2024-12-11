@@ -27,7 +27,7 @@
                         <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'profesor_form' %}"><u ><strong>Nuevo Profesor </strong></u></a></li>
                         <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'New' %}"><u ><strong>Nueva Actividad </strong></u></a></li>
                         <li class="nav-item"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'buscadores' %}"><u ><strong>Busquedas </strong></u></a></li>
-                        
+                    
                         {% if request.user.is_authenticated %}
 
                         <div style="text-align: right;">
@@ -79,7 +79,8 @@
             {% endblock %}
             
             <body background="https://golsmedia.com/wp-content/uploads/2021/05/todo-necesitas-saber-crear-club-deportivo-e1622449688440.jpg" >
-            
+            <div style="text-align: right;"><a style="color:rgb(0, 0, 0)" class="nav-link" href="{% url 'About' %}"><u><strong>About </strong></u></a></li></div>
+            </div>
             {% block main %}
             
             {% endblock %}

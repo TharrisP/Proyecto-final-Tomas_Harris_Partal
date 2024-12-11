@@ -98,3 +98,6 @@ def lista_profesores(req):
 def lista_socios(req):
     socios = Socios.objects.all()
     return render(req, 'appProyecto/socios.html', {'socios': socios})
+
+def about(req):
+    return render(req, "appProyecto/about.html")
