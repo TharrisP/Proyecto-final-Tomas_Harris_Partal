@@ -54,15 +54,18 @@ Este es un Proyecto Web Django con patrón MVT, en el cual se trabaja con distin
 10. **Crear cuenta**
    - Aparece un formulario de registro de usuario en el que solicitará usuario, email, contraseña y avatar (foto de perfil, es opcional).
 
+11. **About**
+   - Redirige a una página en la que se habla sobre el creador del sitio web.
+
 #### Una vez iniciada la sesión:
 
-11. **Ver perfil**
+12. **Ver perfil**
    - Figura nombre de usuario, email y, en caso de tener, la foto de perfil (sino aparece un mensaje de "No has subido un avatar"). En esta página se pueden observar dos botones:
 
                         *Editar Perfil*: Dirige a un formulario para modificar los datos de perfil.
                         *Eliminar Cuenta*: Aparece una pregunta de confirmación de eliminación de la cuenta.
 
-12. **Cerrar sesión**
+13. **Cerrar sesión**
    - Se sale de la sesión actual, volviendo a la pagina principal y sin acceso a la mayoría de la informacion; solo se tiene acceso a la pagina principal y la busqueda de profesores, actividades.
 
 
@@ -86,3 +89,5 @@ Principales Funcionalidades
 - Ver Perfil:                 http://127.0.0.1:8000/app_user/view-profile/
 - Cerrar Sesión:              http://127.0.0.1:8000/app_user/logout/
 
+En test.py dentro de app_user, se pueden observar los casos de prueba realizados.
+**Los resultados se encuentran en un archivo .xlsx (excel), el cual se encuentra fuera del proyecto en el mismo sector que este archivo README.md** 
