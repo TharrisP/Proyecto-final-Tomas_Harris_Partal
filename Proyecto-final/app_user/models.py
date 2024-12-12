@@ -6,5 +6,5 @@ class Profile(models.Model):
     user=models.OneToOneField(User, on_delete=models.CASCADE, null=True)
     imagen=models.ImageField(upload_to='profile_images/', null=True, blank=True)
 
-def __str__(self):
+    def __str__(self):
         return f"{self.user} - {self.imagen}"
